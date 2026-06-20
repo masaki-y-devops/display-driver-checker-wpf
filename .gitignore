@@ -1,7 +1,7 @@
 ## --- Visual Studio Build Outputs ---
 # WPFのbinとobjフォルダを完全に除外
 [Bb]in/
-[Ob]j/
+[Oo]bj/
 
 ## --- .NET / Visual Studio User Files ---
 # ユーザー固有の設定やキャッシュ
