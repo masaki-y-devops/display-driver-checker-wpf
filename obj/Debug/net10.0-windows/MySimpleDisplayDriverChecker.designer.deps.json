@@ -1,0 +1,28 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Microsoft.Bcl.Cryptography/10.0.9": {
+        "runtime": {
+          "lib/net10.0/Microsoft.Bcl.Cryptography.dll": {
+            "assemblyVersion": "10.0.0.9",
+            "fileVersion": "10.0.926.27113"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Microsoft.Bcl.Cryptography/10.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iSljz/oaqFzH7c4mNKwYt8GqK1mxoDMgP0wliKaEF9TejFxyZ3acLopin1v5PAQIa9GE0flOESkwOnik83X0YA==",
+      "path": "microsoft.bcl.cryptography/10.0.9",
+      "hashPath": "microsoft.bcl.cryptography.10.0.9.nupkg.sha512"
+    }
+  }
+}

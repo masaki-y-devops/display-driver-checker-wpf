@@ -1,0 +1,19 @@
+## --- Visual Studio Build Outputs ---
+# WPFのbinとobjフォルダを完全に除外
+[Bb]in/
+[Ob]j/
+
+## --- .NET / Visual Studio User Files ---
+# ユーザー固有の設定やキャッシュ
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## --- IDE Tools and Cache ---
+# Visual Studioが生成するキャッシュフォルダ
+.vs/
+
+## --- Rider / Resharper (もし他のIDEを使う場合) ---
+.idea/
+*.sln.DotSettings.user
