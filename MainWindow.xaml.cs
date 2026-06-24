@@ -43,7 +43,7 @@ namespace MySimpleDisplayDriverChecker
                     // try構文内に書く
 
                     // 古い方法。インスタンス化してから、using構文で囲む方法
-                    // X509Certificate2 cert = new X509Certificate2(filePath);
+                    // using X509Certificate2 cert = new X509Certificate2(filePath);
 
                     // 新しい方法。スタティッククラスのLoadCertificateFromFileメソッドを呼び出して、using構文で囲む方法
                     // ここがハマったポイント。new()は不要。スタティック（静的）クラスであるため。
