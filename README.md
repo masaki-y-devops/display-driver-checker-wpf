@@ -48,4 +48,8 @@ sha256sum -c *.exe.sha256
 
 ~~~
 
-→ ディレクトリ内のすべての.exeの整合性がチェックされます。
+<img width="533" height="364" alt="checking-driver-sha256sum" src="https://github.com/user-attachments/assets/1da672e7-5719-4606-b512-3343f0b500f1" />
+
+
+
+→ どれだけ複数あっても、このようにディレクトリ内のすべての.exeの整合性がチェックされます。
