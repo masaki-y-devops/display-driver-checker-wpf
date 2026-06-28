@@ -30,7 +30,7 @@ x86-64専用です。
 
 .NET 10ランタイムが必要です。ダウンロードはこちら→https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-10.0.9-windows-x64-installer
 
-起動して、任意のディスプレイドライバをウインドウ内に放り込んでください。
+Releaseページよりダウンロード後、起動して、任意のディスプレイドライバをウインドウ内に放り込んでください。
 
 署名検証後、その.exeファイルと同階層に.sha256ファイルが作成されるはずです。
 
