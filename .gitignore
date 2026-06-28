@@ -3,6 +3,9 @@
 [Bb]in/
 [Oo]bj/
 
+# WPF / .NET Publish Profiles
+**/Properties/PublishProfiles/*.pubxml
+
 ## --- .NET / Visual Studio User Files ---
 # ユーザー固有の設定やキャッシュ
 *.suo
