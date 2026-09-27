@@ -1,63 +1,61 @@
-## 何をするアプリなのか
+## What is the application?
 
-Windows向けのドライバ（特にディスプレイドライバを想定）の署名をチェックし、
+Check the signature of the driver for Windows (especially the display driver) and
 
-真正性を確認できた場合に各ファイルのチェックサムを計算、
+Calculate the checksum of each file when the authenticity can be confirmed,
 
-その後に計算結果を、
+After the calculation results,
 
-後日linuxの``sha256sum -c``コマンドで検証可能なように、
+As it can be verified with the linux `sha256sum -c` command at a later date,
 
-同一階層に``(ファイル名).sha256``という形で保存します。
+Save in the form of ``(file name).sha256`` in the same hierarchy.
 
-## 問題意識
+## Awareness of the problem
 
-こういう作業、めんどくさくないですか？
+Is this kind of work boring?
 
-1. メーカーサイトから落としてきたドライバファイルの.exeファイルが破損していないか（改変されていないか）チェックしたい。
+1. I want to check whether the .exe file is damaged (modified) by the driver file dropped from the manufacturer site.
 
-2. 今後リンク切れでダウンロードできなくなってしまうことを見越して、破損していないか確認してから光学ディスクなどにアーカイブしたい。
+2. In anticipation of the fact that it will not be possible to download due to broken links in the future, I want to check if it is damaged and archived to an optical disk etc.
 
-3. せっかくなのでメーカーがリリースしたままの真正な状態かを確かめてから後で破損の有無をチェックできるようにしておきたい。
+3. Since it is a great deal, I want to be able to check whether there is a break or not later after confirming whether the manufacturer is in a genuine state as it is released.
 
-というのも、GPD WIN MiniのAMD Radeon 780Mドライバが不安定で、バージョンを遡りながら逐一検証している際に思い立ちました。
+The AMD Radeon 780M driver of the GPD WIN Mini was unstable and I thought I was checking it one by one while going back to the version.
 
-各exeファイルをダウンロードさえすれば、その複数ファイルを本アプリのウインドウにD&Dしてぶち込むだけで署名真正性検証とチェックサム計算・保存がワンストップで実現します。
+As long as you download each exe file, just D&D the multiple files into the window of this application and insert them into the window of this application, signature authenticity verification and checksum calculation / save are realized in one stop.
 
-## 使い方
+## How to use
 
-x86-64専用です。
+It is for x86-64 only.
 
-.NET 10ランタイムが必要です。ダウンロードはこちら → [Microsoft公式](https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x64.exe)
+. NET 10 runtime is required. Download here → [Microsoft official] (https://aka.ms/dotnet/1.0/windowsdeskstop-runtime-win-x64.exe)
 
-Releaseページよりダウンロード後、起動して、任意のディスプレイドライバをウインドウ内に放り込んでください。
+After downloading from the Release page, start it and throw any display driver into the window.
 
-署名検証後、その.exeファイルと同階層に.sha256ファイルが作成されるはずです。
+After verifying the signature, a .sha256 file should be created in the same tier as the .exe file.
 
-作成された.sha256ファイルは、後で改変されないように.exeとセットにしてBD-RやM-DISCに焼いておくと安心です。
+The created .sha256 file should be set with .exe so that it will not be modified later and baked into BD-R or M-DISC.
 
-## 後日の検証方法
+## How to check later
 
 
 
-1. チェックサムを照合したいディレクトリをエクスプローラーで開きます。
-2. ディレクトリ内で右クリックして、WSLかGit Bashを開きます。
-3. 以下のようにコマンド入力:
+1. Open the directory you want to match the checksum in Explorer.
+2. Open the WSL or Git Bash by right-clicking in the directory.
+3. Enter the command as follows:
 
-~~~bash
+~~~~bash
 
 sha256sum -c *.exe.sha256
 
-~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-<img width="533" height="364" alt="checking-driver-sha256sum" src="https://github.com/user-attachments/assets/1da672e7-5719-4606-b512-3343f0b500f1" />
+<img width="533" height="364" alt="checking-driver-sha256sum" src="https://github.com/user-attachments/assets/1da672e7-5719-4606-b512-33343f0b500f1" />
 
 
 
-→ どれだけ複数あっても、このようにディレクトリ内のすべての.exeの整合性がチェックされます。
+→ No matter how many there are, the integrity of all .exe in the directory is checked in this way.
 
-## 問題点（FIXME:）
+## Problem (FIXME:)
 
-- D&Dされたファイルが何か、厳密に判定していない
-
-- [iso-builder-wpf](https://github.com/masaki-y-devops/iso-builder-wpf)の方と異なり、進捗表示、キャンセル処理実装をサボっている
+- No D&D files are strictly determined.
