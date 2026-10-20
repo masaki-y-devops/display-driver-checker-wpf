@@ -48,12 +48,8 @@ The created .sha256 file should be set with .exe so that it will not be modified
 2. Open the WSL or Git Bash by right-clicking in the directory.
 3. Enter the command as follows:
 
-~~~~bash
+~~~bash
 
 sha256sum -c *.exe.sha256
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-<img width="533" height="364" alt="checking-driver-sha256sum" src="https://github.com/user-attachments/assets/1da672e7-5719-4606-b512-33343f0b500f1" />
-
-→ No matter how many there are, the integrity of all .exe in the directory is checked in this way.
+~~~
