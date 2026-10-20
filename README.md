@@ -28,17 +28,21 @@ As long as you download each exe file, just D&D the multiple files into the wind
 
 It is for x86-64 only.
 
-. NET 10 runtime is required. Download here → [Microsoft official] (https://aka.ms/dotnet/1.0/windowsdeskstop-runtime-win-x64.exe)
+.NET 10 runtime is required.
 
-After downloading from the Release page, start it and throw any display driver into the window.
+To install dependencies, Run below command on cmd/pwsh as admin:
+
+~~~
+winget install Microsoft.DotNet.DesktopRuntime.10
+~~~
+
+After downloading from the Release page, start it and D&D display driver into the window.
 
 After verifying the signature, a .sha256 file should be created in the same tier as the .exe file.
 
 The created .sha256 file should be set with .exe so that it will not be modified later and baked into BD-R or M-DISC.
 
 ## How to check later
-
-
 
 1. Open the directory you want to match the checksum in Explorer.
 2. Open the WSL or Git Bash by right-clicking in the directory.
@@ -52,10 +56,4 @@ sha256sum -c *.exe.sha256
 
 <img width="533" height="364" alt="checking-driver-sha256sum" src="https://github.com/user-attachments/assets/1da672e7-5719-4606-b512-33343f0b500f1" />
 
-
-
 → No matter how many there are, the integrity of all .exe in the directory is checked in this way.
-
-## Problem (FIXME:)
-
-- No D&D files are strictly determined.
