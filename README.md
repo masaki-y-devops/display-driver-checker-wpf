@@ -1,28 +1,22 @@
-## What is the application?
+## Overview
 
-Check the signature of the driver for Windows (especially the display driver) and
+I developed this tiny apps to check the signature of the driver for Windows, 
 
-Calculate the checksum of each file when the authenticity can be confirmed,
+especially the display driver, and calculate the checksum of each file when the authenticity can be confirmed.
 
-After the calculation results,
+If it is completed without errors, it can be verified with the linux `sha256sum -c` command at any times,
 
-As it can be verified with the linux `sha256sum -c` command at a later date,
-
-Save in the form of ``(file name).sha256`` in the same hierarchy.
+thanks to the form of ``(file name).sha256`` in the same hierarchy.
 
 ## Awareness of the problem
 
-Is this kind of work boring?
+I think these workflows described below is annoying.
 
-1. I want to check whether the .exe file is damaged (modified) by the driver file dropped from the manufacturer site.
+1. Checking whether the .exe file is damaged (modified) by someone except genuine publishers.
 
-2. In anticipation of the fact that it will not be possible to download due to broken links in the future, I want to check if it is damaged and archived to an optical disk etc.
+2. Saving check results to ensure integurity of optical disk backup.
 
-3. Since it is a great deal, I want to be able to check whether there is a break or not later after confirming whether the manufacturer is in a genuine state as it is released.
-
-The AMD Radeon 780M driver of the GPD WIN Mini was unstable and I thought I was checking it one by one while going back to the version.
-
-As long as you download each exe file, just D&D the multiple files into the window of this application and insert them into the window of this application, signature authenticity verification and checksum calculation / save are realized in one stop.
+I made this for GPD Win Mini, that its AMD Radeon 780M driver was sometimes unstable when running RPCS3.
 
 ## How to use
 
@@ -42,10 +36,12 @@ After verifying the signature, a .sha256 file should be created in the same tier
 
 The created .sha256 file should be set with .exe so that it will not be modified later and baked into BD-R or M-DISC.
 
-## How to check later
+## Examples to Check multiple files integurity later
 
 1. Open the directory you want to match the checksum in Explorer.
+
 2. Open the WSL or Git Bash by right-clicking in the directory.
+   
 3. Enter the command as follows:
 
 ~~~bash
@@ -53,3 +49,5 @@ The created .sha256 file should be set with .exe so that it will not be modified
 sha256sum -c *.exe.sha256
 
 ~~~
+
+It will return "foo.exe: OK" if it is vaild sha256sum.
